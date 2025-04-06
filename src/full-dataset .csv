@@ -1,0 +1,73 @@
+Movie Title,Animated,Live-Action,Sci-Fi,Fantasy,Comedy,Drama,Action,Horror,Romance,Family-Friendly,Historical,Musical
+Toy Story,1,0,0,0,1,0,0,0,0,1,0,0
+The Matrix,0,1,1,0,0,0,1,0,0,0,0,0
+Spirited Away,1,0,0,1,0,1,0,0,0,1,0,0
+Jurassic Park,0,1,1,0,0,0,1,0,0,0,0,0
+Paddington,0,1,0,0,1,0,0,0,0,1,0,0
+Schindler's List,0,1,0,0,0,1,0,0,0,0,1,0
+Mad Max: Fury Road,0,1,1,0,0,0,1,0,0,0,0,0
+The Exorcist,0,1,0,0,0,0,0,1,0,0,0,0
+La La Land,0,1,0,0,1,1,0,0,1,0,0,1
+Moana,1,0,0,1,1,0,0,0,0,1,0,1
+Alien,0,1,1,0,0,0,0,1,0,0,0,0
+Shrek,1,0,1,1,1,0,0,0,0,1,0,0
+Blade Runner,0,1,1,0,0,0,1,0,0,0,0,0
+Finding Nemo,1,0,0,0,1,0,0,0,0,1,0,0
+Arrival,0,1,1,0,0,1,0,0,0,0,0,0
+Coco,1,0,0,1,1,1,0,0,0,1,0,1
+Guardians of the Galaxy,0,1,1,0,1,0,1,0,0,0,0,0
+It,0,1,0,0,0,0,0,1,0,0,0,0
+The Lion King,1,0,0,0,0,1,0,0,0,1,0,1
+Interstellar,0,1,1,0,0,1,0,0,0,0,0,0
+Frozen,1,0,0,1,1,0,0,0,0,1,0,1
+The Godfather,0,1,0,0,0,1,0,0,0,0,0,0
+Harry Potter and the Sorcerer's Stone,0,1,0,1,0,0,0,0,0,1,0,0
+Inception,0,1,1,0,0,0,1,0,0,0,0,0
+Zootopia,1,0,0,0,1,0,0,0,0,1,0,0
+The Dark Knight,0,1,0,0,0,0,1,0,0,0,0,0
+Beauty and the Beast,1,0,0,1,1,1,0,0,1,1,0,1
+The Shawshank Redemption,0,1,0,0,0,1,0,0,0,0,0,0
+Up,1,0,0,0,1,1,0,0,0,1,0,0
+Avengers: Endgame,0,1,1,0,0,0,1,0,0,0,0,0
+Mulan,1,0,0,1,0,1,1,0,0,1,1,0
+The Silence of the Lambs,0,1,0,0,0,0,0,1,0,0,0,0
+Singin' in the Rain,0,1,0,0,1,1,0,0,1,0,0,1
+The Social Network,0,1,0,0,0,1,0,0,0,0,1,0
+Wall-E,1,0,1,0,1,0,0,0,0,1,0,0
+Gladiator,0,1,0,0,0,1,1,0,0,0,1,0
+The Princess Bride,0,1,1,1,1,0,0,0,1,1,0,0
+Fight Club,0,1,0,0,0,1,1,0,0,0,0,0
+Ratatouille,1,0,0,0,1,0,0,0,0,1,0,0
+Back to the Future,0,1,1,0,1,0,1,0,0,0,0,0
+Little Women,0,1,0,0,0,1,1,0,1,0,1,0
+Psycho,0,1,0,0,0,0,0,1,0,0,0,0
+The Wizard of Oz,0,1,1,1,1,0,0,0,1,1,0,1
+Jojo Rabbit,0,1,1,1,1,1,0,0,0,0,1,0
+Spider-Man: Into the Spider-Verse,1,0,1,0,1,1,1,0,0,1,0,0
+Parasite,0,1,0,0,0,1,0,0,0,0,0,0
+The Grand Budapest Hotel,0,1,1,1,1,1,0,0,0,0,0,0
+1917,0,1,0,0,0,1,1,0,0,0,1,0
+Knives Out,0,1,0,0,1,1,0,0,0,0,0,0
+Portrait of a Lady on Fire,0,1,0,0,0,1,1,0,1,0,1,0
+Hereditary,0,1,0,0,0,0,0,1,0,0,0,0
+Hamilton,0,1,0,0,0,1,0,0,0,0,1,1
+The Farewell,0,1,0,0,1,1,0,0,0,0,0,0
+The Lighthouse,0,1,0,1,0,1,0,1,0,0,0,0
+Booksmart,0,1,0,0,1,1,0,0,0,0,0,0
+Ford v Ferrari,0,1,0,0,0,1,1,0,0,0,1,0
+Joker,0,1,0,0,0,1,0,0,0,0,0,0
+Once Upon a Time... in Hollywood,0,1,0,0,1,1,0,0,0,0,1,0
+Marriage Story,0,1,0,0,0,1,0,0,1,0,0,0
+Little Miss Sunshine,0,1,0,0,1,1,0,0,0,0,0,0
+Arrival,0,1,1,0,0,1,0,0,0,0,0,0
+Roma,0,1,0,0,0,1,0,0,0,0,0,0
+Moonlight,0,1,0,0,0,1,0,0,0,0,0,0
+Manchester by the Sea,0,1,0,0,0,1,0,0,0,0,0,0
+La La Land,0,1,0,0,1,1,0,0,1,0,0,1
+Hidden Figures,0,1,0,0,0,1,0,0,0,0,1,0
+Hacksaw Ridge,0,1,0,0,0,1,1,0,0,0,1,0
+Hell or High Water,0,1,0,0,1,1,1,0,0,0,0,0
+Lion,0,1,0,0,0,1,0,0,0,0,0,0
+Arrival,0,1,1,0,0,1,0,0,0,0,0,0
+Deadpool,0,1,1,0,1,0,1,0,0,0,0,0
+Room,0,1,0,0,0,1,0,0,0,0,0,0
