@@ -32,7 +32,7 @@ class TreeNode:
 
 
 """
-
+generated with genai:
 
 FUNCTION CONTRACTS:
 
@@ -180,3 +180,82 @@ def build_tree(movies,categories,movie_name):
     false_branch=build_tree(no_movies, remaining_features,movie_name)
 
     return TreeNode(feature=cat, yes_child=true_branch, no_child=false_branch)
+
+
+
+"""play_game(root, movies):
+    Input: root (TreeNode), movies (List of Dictionaries) - The root node of the decision tree and the original movie data.
+    Output: None (prints game output).
+    Purpose: Manages the gameplay loop, traversing the decision tree based on user input.
+
+    ask_question(feature):
+        Input: feature (string) - The feature to ask the user about.
+        Output: answer (string) - The user's answer ("yes" or "no").
+        Purpose: Asks the user a question and gets their response.
+
+    get_remaining_movies(node):
+        Input: node (TreeNode) - The current node in the decision tree.
+        Output: remaining_movies (List of Strings) - A list of the remaining possible movie titles.
+        Purpose: Gets the list of movies remaining at the current node.
+
+    display_results(remaining_movies):
+        Input: remaining_movies (List of Strings) - The list of remaining possible movie titles.
+        Output: None (prints results).
+        Purpose: Displays the final results to the user."""
+def play_game(root):     
+    def ask_question(category):
+        answer=input(f"is your movie {category} ")
+        if answer.lower()=='yes':
+            return True
+        elif answer.lower()=='no':
+            return False
+        else:
+            print("invalid answer, type yes or no")
+            ask_question(category)
+
+    def winner_messages(again):
+        if again.lower()=="yes":
+            play_game(root)
+        elif again.lower()=="no":
+            print("alright, bye!")
+        else:
+            again=input("invalid answer, type yes or no: ")
+            winner_messages(again)
+        
+    def display_results(results,guesses):
+        answer=False
+        if len(results)>0:
+            rand=random.randint(0,len(results))
+            answer=ask_question(results[rand])
+        if answer:
+            again=input(f"good game!I won in only {guesses} guesses...want to play again? ")
+            winner_messages(again)
+        else:
+            again=input(f"movie not found, congratulations!...want to play again? ")
+            winner_messages(again)
+
+    def get_next_question(root,guesses):
+        if type(root.feature)==list:
+            return display_results(root.feature,guesses+1)
+        elif ask_question(root.feature):
+            get_next_question(root.yes_child,guesses+1)
+        else:
+            get_next_question(root.no_child,guesses+1)
+
+    get_next_question(root,0)
+
+movies,categories,movie_name=load_movie_data('Corrected_Movie_Dataset.csv')
+
+root=build_tree(movies, categories,movie_name)
+
+def transverse(root,child,number):
+    print(" " * (child * 4) + f"{number}{root.feature}")
+    if root.yes_child:
+        transverse(root.yes_child, child+1,str(f"{number}.1"))
+    if root.no_child:
+        transverse(root.no_child, child+1,str(f"{number}.2"))
+transverse(root, 0,'0')
+
+
+
+play_game(root)
