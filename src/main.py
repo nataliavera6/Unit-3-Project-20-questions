@@ -32,7 +32,7 @@ class TreeNode:
 
 
 """
-generated with genai:
+
 
 FUNCTION CONTRACTS:
 
@@ -124,20 +124,7 @@ def load_movie_data(filepath):
 
 
 def build_tree(movies,categories,movie_name):
-    """ find_best_split(movies, features):
-        Input: movies (List of Dictionaries), features (List of Strings) - The movie data and the list of available features.
-        Output: best_feature (string) - The name of the feature that most evenly splits the data (count amount of 1 and 0 and return feature with minimum difference between counts)
-        Purpose: Finds the feature that most evenly splits the data.
-
-    split_data(movies, feature, value):
-        Input: movies (List of Dictionaries), feature (string), value (integer) - The movie data, the feature to split on, and the value to split by (0 or 1).
-        Output: (true_set, false_set) (Tuple of List of Dictionaries) - Two lists of movies, split based on the feature value.
-        Purpose: Splits the movie data into two subsets based on a feature and its value.
-
-    get_results(movies):
-        Input: movies (List of Dictionaries)
-        Output: results (Dictionary) - A dictionary of movie titles and their counts.
-        Purpose: Returns the counts of movies remaining."""
+  
     if len(categories)==0 or len(movies)<=1:
         return TreeNode(feature=[movie[movie_name]for movie in movies])
 
@@ -183,25 +170,6 @@ def build_tree(movies,categories,movie_name):
 
 
 
-"""play_game(root, movies):
-    Input: root (TreeNode), movies (List of Dictionaries) - The root node of the decision tree and the original movie data.
-    Output: None (prints game output).
-    Purpose: Manages the gameplay loop, traversing the decision tree based on user input.
-
-    ask_question(feature):
-        Input: feature (string) - The feature to ask the user about.
-        Output: answer (string) - The user's answer ("yes" or "no").
-        Purpose: Asks the user a question and gets their response.
-
-    get_remaining_movies(node):
-        Input: node (TreeNode) - The current node in the decision tree.
-        Output: remaining_movies (List of Strings) - A list of the remaining possible movie titles.
-        Purpose: Gets the list of movies remaining at the current node.
-
-    display_results(remaining_movies):
-        Input: remaining_movies (List of Strings) - The list of remaining possible movie titles.
-        Output: None (prints results).
-        Purpose: Displays the final results to the user."""
 def play_game(root):     
     def ask_question(category):
         answer=input(f"is your movie {category} ")
