@@ -92,3 +92,91 @@ Relationships:
     build_tree creates the tree that play_game traverses.
 
 """
+
+import csv
+import random
+movie_name=''
+def load_movie_data(filepath):
+    """
+    Reads the movie data from the CSV file and returns it as a list of dictionaries
+    and the list of feature categories (excluding the identifier column).
+    
+    Parameters:
+        filepath (str): Path to the CSV file.
+    
+    Returns:
+         List of movie dictionaries and list of feature names.
+    """
+    movies = []
+    with open(filepath, mode='r', encoding='utf-8') as file:
+        reader = csv.DictReader(file)
+
+        all_columns = reader.fieldnames
+        identifier_column = all_columns[0]   # assume first column is identifier (e.g., movie name)
+        movie_name=identifier_column
+        categories = all_columns[1:]         # treat remaining columns as features
+        
+        for row in reader:
+
+            movies.append(dict(row))
+
+    return movies, categories,movie_name
+
+
+def build_tree(movies,categories,movie_name):
+    """ find_best_split(movies, features):
+        Input: movies (List of Dictionaries), features (List of Strings) - The movie data and the list of available features.
+        Output: best_feature (string) - The name of the feature that most evenly splits the data (count amount of 1 and 0 and return feature with minimum difference between counts)
+        Purpose: Finds the feature that most evenly splits the data.
+
+    split_data(movies, feature, value):
+        Input: movies (List of Dictionaries), feature (string), value (integer) - The movie data, the feature to split on, and the value to split by (0 or 1).
+        Output: (true_set, false_set) (Tuple of List of Dictionaries) - Two lists of movies, split based on the feature value.
+        Purpose: Splits the movie data into two subsets based on a feature and its value.
+
+    get_results(movies):
+        Input: movies (List of Dictionaries)
+        Output: results (Dictionary) - A dictionary of movie titles and their counts.
+        Purpose: Returns the counts of movies remaining."""
+    if len(categories)==0 or len(movies)<=1:
+        return TreeNode(feature=[movie[movie_name]for movie in movies])
+
+    def find_best_split(movies, categories):
+        min_diff = float('inf')
+        best_feature = None
+        for category in categories:
+            ones=0
+            for movie in movies:
+                if movie[category] == '1':
+                    ones+=1
+            
+            zeros = len(movies) - ones
+            diff = abs(ones - zeros)
+            if diff < min_diff:
+                
+                min_diff = diff
+                best_feature = category
+
+        return best_feature
+    
+    def split_data(movies, category, value):
+        true=[]
+        false=[]
+        for movie in movies:
+            if movie[category]==value:
+                true.append(movie)
+            else:
+                false.append(movie)
+        return true,false
+
+
+
+    cat=find_best_split(movies, categories)
+    remaining_features = [f for f in categories if f != cat]
+    yes_movies,no_movies=split_data(movies, cat, '1')
+    if not yes_movies or not no_movies:
+        return TreeNode(feature=[movie[movie_name]for movie in movies])
+    true_branch=build_tree(yes_movies, remaining_features,movie_name)
+    false_branch=build_tree(no_movies, remaining_features,movie_name)
+
+    return TreeNode(feature=cat, yes_child=true_branch, no_child=false_branch)
